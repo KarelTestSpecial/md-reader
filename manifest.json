@@ -1,0 +1,12 @@
+{
+  "name": "MD Reader",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "MD Reader"
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
