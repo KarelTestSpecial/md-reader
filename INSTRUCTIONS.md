@@ -12,4 +12,5 @@ Volg deze stappen om de MD Reader Chrome-extensie te laden en te testen:
     *   Maak een lokaal testbestand aan op uw computer (bijv. `test.md`).
     *   Voeg wat Markdown-tekst toe aan dit bestand (bijv. `# Titel\n\n- Lijstitem 1\n- Lijstitem 2`).
     *   Sleep het `test.md`-bestand vanuit uw bestandsverkenner en zet het neer in de dropzone ("Sleep een .md-bestand hierheen") in de pop-up van de extensie.
-8.  **Verifieer het resultaat:** Er zou een nieuw browsertabblad moeten openen met de inhoud van uw `.md`-bestand, correct opgemaakt in HTML.
+    *   **Test de donkere modus:** Gebruik de schakelaar onder de dropzone om de donkere modus in en uit te schakelen. De pop-up moet onmiddellijk van thema veranderen. De voorkeur wordt opgeslagen.
+8.  **Verifieer het resultaat:** Er zou een nieuw browsertabblad moeten openen met de inhoud van uw `.md`-bestand, correct opgemaakt in HTML. Het thema van het tabblad (licht of donker) moet overeenkomen met de instelling in de pop-up.
