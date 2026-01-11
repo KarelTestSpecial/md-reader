@@ -1,6 +1,7 @@
 {
-  "name": "MD Reader",
+  "name": "Most Simple MD Reader",
   "version": "1.0",
+  "description": "Simply drag-and-drop markdown files to the browser.",
   "manifest_version": 3,
   "action": {
     "default_popup": "index.html",
@@ -9,5 +10,10 @@
   "permissions": [
     "tabs",
     "storage"
-  ]
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
 }
