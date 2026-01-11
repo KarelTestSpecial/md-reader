@@ -1,19 +1,19 @@
-# Privacybeleid voor MD Reader
+# Privacy Policy for MD Reader
 
-Deze pagina legt het privacybeleid voor de "MD Reader" Chrome-extensie uit.
+This page explains the privacy policy for the "MD Reader" Chrome extension.
 
-## Gegevensverzameling en -gebruik
+## Data Collection and Usage
 
-De "MD Reader"-extensie verzamelt, bewaart of verzendt **geen** persoonlijke gegevens of de inhoud van uw bestanden.
+The "MD Reader" extension **does not** collect, store, or transmit any personal data or the content of your files.
 
-### Bestandsverwerking
+### File Processing
 
-Wanneer u een Markdown-bestand (`.md`) naar de extensie sleept, wordt de inhoud van dat bestand lokaal in uw browser gelezen. Deze inhoud wordt uitsluitend gebruikt om de opgemaakte versie in een nieuw tabblad weer te geven. De bestandsinhoud verlaat uw computer nooit en wordt op geen enkele server opgeslagen of verwerkt.
+When you drag and drop a Markdown file (`.md`) into the extension, its content is read locally in your browser. This content is used solely to render the formatted version in a new tab. The file content never leaves your computer and is not stored or processed on any server.
 
-### Instellingen
+### Settings
 
-De extensie gebruikt de `chrome.storage.sync`-API om uw voorkeur voor de donkere modus op te slaan. Deze instelling wordt gesynchroniseerd met uw eigen Google-account, zodat u dezelfde instelling op verschillende apparaten heeft. De ontwikkelaar van deze extensie heeft geen toegang tot deze opgeslagen gegevens.
+The extension uses the `chrome.storage.sync` API to save your preference for the dark mode feature. This setting is synced with your own Google Account, allowing you to have the same setting across different devices. The developer of this extension does not have access to this stored data.
 
-## Samenvatting
+## Summary
 
-Uw gegevens en bestanden blijven van u en worden uitsluitend lokaal op uw eigen computer verwerkt.
+Your data and files remain your own and are processed exclusively locally on your computer.
