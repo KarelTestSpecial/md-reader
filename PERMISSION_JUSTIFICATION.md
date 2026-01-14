@@ -4,14 +4,6 @@ Below are the justifications for the permissions requested by the "MD Reader" ex
 
 ---
 
-## `tabs` Permission
-
-**Purpose:** This permission is required for the core functionality of the extension.
-
-**Justification:** The primary function of this extension is to render the content of a local Markdown (`.md`) file in a new browser tab. To achieve this, the extension must be able to open a new tab using the `chrome.tabs.create()` API. This API call requires the `tabs` permission. Without it, the extension cannot display the rendered content to the user, making it non-functional.
-
----
-
 ## `storage` Permission
 
 **Purpose:** This permission is used to save and sync user settings.
