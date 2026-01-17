@@ -3,17 +3,47 @@
 <head>
   <title>MD Reader</title>
   <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 400px;
+      width: 340px;
+      margin: 0;
+      padding: 10px;
+      box-sizing: border-box;
+    }
     #dropzone {
       border: 2px dashed #ccc;
-      border-radius: 20px;
-      width: 300px;
-      height: 200px;
+      border-radius: 10px;
+      width: 100%;
+      height: 40px;
       text-align: center;
-      padding: 20px;
-      margin: 20px auto;
+      padding: 0;
+      margin: 0 0 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
     }
     #dropzone.hover {
       background-color: #f0f0f0;
+    }
+
+    #markdown-input {
+      flex-grow: 1;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding: 5px;
+      font-family: monospace;
+    }
+
+    #render-btn {
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      cursor: pointer;
     }
 
     /* Dark mode styles */
@@ -26,6 +56,16 @@
     }
     body.dark-mode #dropzone.hover {
       background-color: #333;
+    }
+    body.dark-mode #markdown-input {
+      background-color: #2a2a2a;
+      color: #eee;
+      border-color: #555;
+    }
+    body.dark-mode #render-btn {
+      background-color: #333;
+      color: #eee;
+      border-color: #555;
     }
 
     /* The switch - the box around the slider */
