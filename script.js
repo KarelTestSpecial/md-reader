@@ -107,7 +107,7 @@ dropzone.addEventListener('drop', (event) => {
       };
       reader.readAsText(file);
     } else {
-      alert('Sleep een geldig .md-bestand.');
+      alert('Please drop a valid .md file.');
     }
   }
 });
