@@ -8,5 +8,8 @@
   },
   "permissions": [
     "storage"
-  ]
+  ],
+  "icons": {
+    "128": "mdreader-128.png"
+  }
 }
