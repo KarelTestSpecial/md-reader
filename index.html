@@ -38,6 +38,10 @@
       font-family: monospace;
     }
 
+    textarea#markdown-input {
+      resize: none;
+    }
+    
     .action-bar {
         display: flex;
         justify-content: space-between;
@@ -45,11 +49,11 @@
     }
 
     #render-btn {
-      padding: 6px 10px; /* Slimmer */
+      padding: 4px 10px; /* Slimmer */
       border-radius: 5px;
       border: 1px solid #ccc;
       cursor: pointer;
-      font-size: 0.8rem; /* Even Slimmer */
+      font-size: 0.7rem; /* Even Slimmer */
     }
 
     /* Dark mode styles */
@@ -79,15 +83,18 @@
       display: flex;
       align-items: center;
     }
+    
     em {
       margin-left: 10px;
-      font-size: 0.9rem; /* Slimmer */
+      font-size: 0.7rem;
+      margin-right: 10px;
     }
+    
     .theme-switch {
       position: relative;
       display: inline-block;
-      width: 46px; /* Slimmer */
-      height: 24px; /* Slimmer */
+      width: 36px; 
+      height: 16px;
     }
 
     /* Hide default HTML checkbox */
@@ -113,10 +120,10 @@
     .slider:before {
       position: absolute;
       content: "";
-      height: 16px; /* Slimmer */
-      width: 16px; /* Slimmer */
-      left: 4px;
-      bottom: 4px;
+      height: 12px; 
+      width: 12px; 
+      left: -1px;
+      bottom: 2px;
       background-color: white;
       -webkit-transition: .4s;
       transition: .4s;
@@ -152,11 +159,11 @@
   <div class="action-bar">
       <button id="render-btn">Render</button>
       <div class="theme-switch-wrapper">
+        <em>light / dark </em>
         <label class="theme-switch" for="checkbox">
           <input type="checkbox" id="checkbox" />
           <div class="slider round"></div>
         </label>
-        <em>light / dark</em>
       </div>
   </div>
   <script src="marked.min.js"></script>
