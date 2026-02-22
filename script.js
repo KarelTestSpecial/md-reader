@@ -39,8 +39,13 @@ dropzone.addEventListener('dragleave', () => {
 });
 
 function renderMarkdown(markdownText, title = 'Rendered Markdown') {
-    const bodyContent = marked(markdownText);
 
+    // Oude versie:
+    // const bodyContent = marked(markdownText);
+
+    // Nieuwe versie (vaak):
+    const bodyContent = marked.parse(markdownText);
+  
     chrome.storage.sync.get('darkMode', (data) => {
         const isDark = data.darkMode;
         let themeCss = `
