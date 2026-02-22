@@ -16,7 +16,7 @@
       border: 2px dashed #ccc;
       border-radius: 10px;
       width: 100%;
-      height: 80px; /* Increased height */
+      flex: 1;
       text-align: center;
       padding: 0;
       margin: 0 0 10px 0;
@@ -30,12 +30,13 @@
     }
 
     #markdown-input {
-      flex-grow: 1;
+      flex: 1;
       margin-bottom: 10px;
       border-radius: 5px;
       border: 1px solid #ccc;
       padding: 5px;
       font-family: monospace;
+      box-sizing: border-box;
     }
 
     textarea#markdown-input {
