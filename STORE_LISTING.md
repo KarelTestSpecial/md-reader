@@ -1,12 +1,3 @@
-# Chrome Web Store listing — MD Reader
-
-## Name
-MD Reader
-
-## Short description
-A simple and fast way to read Markdown files directly in your browser.
-
-## Detailed description
 MD Reader provides a fast and clean environment to read Markdown (.md) files right in your browser. 
 
 MORE FROM THIS DEVELOPER
