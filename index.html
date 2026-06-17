@@ -6,24 +6,32 @@
     body {
       display: flex;
       flex-direction: column;
-      height: 400px;
-      width: 340px;
-      margin: 0;
-      padding: 10px;
+      min-height: 100vh;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
       box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
     }
     #dropzone {
-      border: 2px dashed #ccc;
-      border-radius: 10px;
+      border: 3px dashed #bbb;
+      border-radius: 15px;
       width: 100%;
       flex: 1;
+      min-height: 250px;
       text-align: center;
-      padding: 0;
-      margin: 0 0 10px 0;
+      padding: 40px;
+      margin: 0 0 20px 0;
       display: flex;
       align-items: center;
       justify-content: center;
       box-sizing: border-box;
+      background-color: #fff;
+      font-size: 1.2rem;
+      color: #666;
+      transition: all 0.2s ease-in-out;
     }
     #dropzone.hover {
       background-color: #f0f0f0;
@@ -31,12 +39,15 @@
 
     #markdown-input {
       flex: 1;
-      margin-bottom: 10px;
-      border-radius: 5px;
+      min-height: 300px;
+      margin-bottom: 20px;
+      border-radius: 10px;
       border: 1px solid #ccc;
-      padding: 5px;
-      font-family: monospace;
+      padding: 15px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1rem;
       box-sizing: border-box;
+      background-color: #fff;
     }
 
     textarea#markdown-input {
@@ -50,20 +61,48 @@
     }
 
     #render-btn {
-      padding: 4px 10px; /* Slimmer */
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: none;
       cursor: pointer;
-      font-size: 0.7rem; /* Even Slimmer */
+      font-size: 1.1rem;
+      font-weight: bold;
+      background-color: #4CAF50;
+      color: white;
+      transition: background-color 0.2s;
+    }
+    #render-btn:hover {
+      background-color: #45a049;
+    }
+
+    .browse-btn {
+      background-color: #2196F3;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      display: inline-block;
+      margin: 15px 5px;
+      transition: transform 0.1s, background-color 0.2s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .browse-btn:hover {
+      background-color: #0b7dda;
+      transform: translateY(-2px);
     }
 
     /* Dark mode styles */
     body.dark-mode {
-      background-color: #1a1a1a;
-      color: #fff;
+      background-color: #121212;
+      color: #e0e0e0;
     }
     body.dark-mode #dropzone {
       border-color: #555;
+      background-color: #1e1e1e;
+      color: #aaa;
     }
     body.dark-mode #dropzone.hover {
       background-color: #333;
@@ -78,6 +117,13 @@
       color: #eee;
       border-color: #555;
     }
+    body.dark-mode .browse-btn {
+      background-color: #1976D2;
+      color: white;
+    }
+    body.dark-mode .browse-btn:hover {
+      background-color: #1565C0;
+    }
 
     /* The switch - the box around the slider */
     .theme-switch-wrapper {
@@ -87,8 +133,12 @@
     
     em {
       margin-left: 10px;
-      font-size: 0.7rem;
-      margin-right: 10px;
+      font-size: 1rem;
+      margin-right: 15px;
+      color: #666;
+    }
+    body.dark-mode em {
+      color: #aaa;
     }
     
     .theme-switch {
@@ -155,7 +205,14 @@
   </style>
 </head>
 <body>
-  <div id="dropzone">Drop an .md file here or paste the content below</div>
+  <div id="dropzone">
+    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+      <span>Drop an .md file here</span>
+      <label for="file-upload" class="browse-btn">Browse</label>
+      <span>or paste the content below</span>
+    </div>
+    <input type="file" id="file-upload" accept=".md" style="display: none;">
+  </div>
   <textarea id="markdown-input" rows="10" cols="40" placeholder="Paste your markdown here..."></textarea>
   <div class="action-bar">
       <button id="render-btn">Render</button>

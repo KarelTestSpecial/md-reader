@@ -54,9 +54,12 @@ function renderMarkdown(markdownText, title = 'Rendered Markdown') {
                     font-family: sans-serif;
                     line-height: 1.6;
                     padding: 2em;
-                    max-width: 800px;
+                    max-width: 95%; /* Increased from 800px to allow scaling */
                     margin: 0 auto;
                 }
+                table { border-collapse: collapse; width: 100%; margin-bottom: 1em; }
+                th, td { border: 1px solid #ddd; padding: 8px; }
+                th { background-color: #f4f4f4; text-align: left; }
             </style>
         `;
         if (isDark) {
@@ -68,7 +71,7 @@ function renderMarkdown(markdownText, title = 'Rendered Markdown') {
                         font-family: sans-serif;
                         line-height: 1.6;
                         padding: 2em;
-                        max-width: 800px;
+                        max-width: 95%; /* Increased from 800px to allow scaling */
                         margin: 0 auto;
                     }
                     a { color: #58a6ff; }
@@ -77,6 +80,9 @@ function renderMarkdown(markdownText, title = 'Rendered Markdown') {
                     blockquote { border-left: 5px solid #555; padding-left: 1em; color: #ccc; }
                     hr { border-color: #555; }
                     img { max-width: 100%; }
+                    table { border-collapse: collapse; width: 100%; margin-bottom: 1em; }
+                    th, td { border: 1px solid #444; padding: 8px; }
+                    th { background-color: #333; text-align: left; }
                 </style>
             `;
         }
@@ -123,3 +129,28 @@ renderBtn.addEventListener('click', () => {
         renderMarkdown(markdownText);
     }
 });
+
+function handleFileUpload(event) {
+  const files = event.target.files;
+  if (files.length > 0) {
+    const file = files[0];
+    if (file.name.endsWith('.md')) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const markdownText = e.target.result;
+        renderMarkdown(markdownText, file.name);
+      };
+      reader.readAsText(file);
+    } else {
+      alert('Please select a valid .md file.');
+    }
+    event.target.value = '';
+  }
+}
+
+const fileUpload = document.getElementById('file-upload');
+if (fileUpload) {
+  fileUpload.addEventListener('change', handleFileUpload);
+}
+
+
