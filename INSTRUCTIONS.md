@@ -27,14 +27,15 @@ Volg deze stappen om de MD Reader Chrome-extensie te laden en te testen:
 
 ### Wat u nog meer ziet
 
-*   Onder de knoppen staat hoeveel woorden en tekens de tekst bevat, met de vermelding "unsaved changes" zolang de wijzigingen niet zijn opgeslagen. Het tabblad toont dan een `•` voor de bestandsnaam.
+*   Rechts van de knoppen staat het woord- en tekental, met de vermelding "unsaved changes" zolang de wijzigingen niet zijn opgeslagen. Het tabblad toont dan een `•` voor de bestandsnaam.
+*   Statusmeldingen ("Saved to ...", "Save cancelled.", "Could not save ...") verschijnen in dezelfde balk, tussen de knoppen en het woordaantal. Er is dus geen extra lege regel onderaan: de editor gebruikt alle vrije ruimte van het venster.
 *   Een concept van wat u typt wordt lokaal bewaard (`chrome.storage.local`), zodat niets verloren gaat als u het tabblad sluit. Bij het heropenen van de editor wordt de laatste tekst teruggezet; was die nog niet opgeslagen, dan staat er "unsaved changes" en/of een `•` voor de bestandsnaam.
 *   Als de browser geen bestandskiezer ondersteunt (bijvoorbeeld Firefox of Safari), wordt de tekst als download aangeboden in plaats van opgeslagen.
 
 ## Testen
 
 1.  **Dropzone testen:** Maak een lokaal testbestand aan op uw computer (bijv. `test.md`) met wat Markdown-tekst (bijv. `# Titel\n\n- Lijstitem 1\n- Lijstitem 2`). Sleep het bestand naar de smalle dropzone. De inhoud verschijnt in de editor en er opent een nieuw tabblad met de opgemaakte versie.
-2.  **Editor testen:** Typ rechtstreeks in het tekstveld. De teller onderaan past zich aan en er verschijnt "unsaved changes".
+2.  **Editor testen:** Typ rechtstreeks in het tekstveld. De teller rechts van de knoppen past zich aan en er verschijnt "unsaved changes".
 3.  **Save testen:** Klik op **Save** (of druk `Ctrl+S`), kies een map en een bestandsnaam en controleer of het bestand op schijf staat. Bewerk de tekst daarna en klik opnieuw op **Save**: hetzelfde bestand wordt zonder nieuwe dialoog overschreven. Gebruik `Shift+Ctrl+S` om een nieuw bestand aan te maken.
 4.  **Concept testen:** Typ iets, sluit het tabblad en open de extensie opnieuw. De tekst staat er nog en is gemarkeerd als niet opgeslagen.
 5.  **Donkere modus testen:** Gebruik de schakelaar rechts onderaan bij de knoppen om de donkere modus in en uit te schakelen. De hele interface moet onmiddellijk van thema veranderen en de voorkeur wordt opgeslagen voor de volgende keer.

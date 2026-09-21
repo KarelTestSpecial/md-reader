@@ -14,7 +14,7 @@
       min-height: 100vh;
       max-width: 1000px;
       margin: 0 auto;
-      padding: 24px 20px;
+      padding: 14px 20px 18px;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f9f9f9;
       color: #333;
@@ -55,8 +55,8 @@
 
     /* ---- The editor: as tall as the window allows ---- */
     #markdown-input {
-      flex: 1 1 auto;
-      min-height: 45vh;
+      flex: 1 1 auto;   /* absorbs every free pixel of the window */
+      min-height: 200px; /* keeps the button bar visible in a very short window */
       padding: 16px 18px;
       border-radius: 10px;
       border: 1px solid #ccc;
@@ -143,10 +143,18 @@
       font-weight: bold;
     }
 
-    .status-bar {
-      min-height: 1.3em;
+    /* Status messages live in the action bar (right of the Render button),
+       so no extra row of empty space is lost below the editor. */
+    #status {
+      flex: 1 1 auto;
+      min-width: 0;
+      margin-right: 12px;
       font-size: 0.85rem;
       color: #666;
+      text-align: right;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     #status.ok { color: #2e7d32; }
     #status.warn { color: #b26a00; }
@@ -196,7 +204,7 @@
       background-color: #1565C0;
     }
     body.dark-mode .counter,
-    body.dark-mode .status-bar {
+    body.dark-mode #status {
       color: #aaa;
     }
     body.dark-mode .counter.dirty {
@@ -301,6 +309,7 @@
       <button id="save-btn" title="Save the text to a file on your computer or a synced cloud folder (Ctrl+S). Shift-click to always pick a new location.">Save</button>
       <button id="render-btn" title="Open the rendered markdown in a new tab (Ctrl+Enter)">Render</button>
     </div>
+    <span id="status" role="status" aria-live="polite"></span>
     <div class="toolbar-right">
       <span id="counter" class="counter"></span>
       <div class="theme-switch-wrapper">
@@ -311,9 +320,6 @@
         </label>
       </div>
     </div>
-  </div>
-  <div class="status-bar">
-    <span id="status" role="status" aria-live="polite"></span>
   </div>
   <script src="marked.min.js"></script>
   <script src="script.js"></script>
